@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 red, -2px 0 blue; }
+  20% { text-shadow: -2px -2px lime, 2px 2px cyan; }
+  40% { text-shadow: 2px -2px magenta, -2px 2px yellow; }
+  60% { text-shadow: -2px 0 red, 2px 0 blue; }
+  80% { text-shadow: 2px 2px lime, -2px -2px cyan; }
+  100% { text-shadow: 0 0 red, 0 0 blue; }
+}
+.glitch {
+  animation: glitch 500ms infinite alternate;
+}
+
+.blink {
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.scroll-track {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-loop 40s linear infinite;
+}
+
+@keyframes scroll-loop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.shadow-dance-text {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  animation: shadow-dance 2s infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes shadow-dance {
+  0%, 100% {
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  }
+  50% {
+    text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+  }
+}
+
+@font-face {
+    font-family: 'Fixedsys';
+    src: url('/fixedsys.ttf') format('truetype');
+  }
+  
+  .fixedsys {
+    font-family: 'Fixedsys', monospace;
+  }
+
+  .aboreto-regular {
+    font-family: "Aboreto", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
